@@ -8,14 +8,11 @@ const port=process.env.PORT || 3000
 // express app
 const app = express();
 
-// connect to mongodb & listen for requests
 
-
-mongoose.connect('mongodb://localhost:27017/blog_ninja', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(console.log('database connection successful'))
-  .catch(err => console.log(err));
-
-// register view engine
+const dburl='mongodb+srv://muk:react2020@cluster0.wpuij.mongodb.net/storeblogs?retryWrites=true&w=majority'
+mongoose.connect(dburl,{ useNewUrlParser: true, useUnifiedTopology: true })
+.then((result)=>app.listen(port))
+.catch((err)=>console.log(err))
 app.set('view engine', 'ejs');
 
 // middleware & static files
@@ -80,6 +77,5 @@ app.use((req, res) => {
   res.status(404).render('404', { title: '404' });
 });
 
-app.listen(port,()=>{
-  console.log(`server running on ${port}`)
-})
+
+

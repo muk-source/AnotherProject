@@ -146,10 +146,15 @@ textarea{
     font-size: 2rem;
     display: block;
     text-align: center;
-    max-width: fit-content;
+    /* max-width: fit-content; */
 
   }
   nav p{
     display: none;
+  }
+  .bodyindex{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 }
