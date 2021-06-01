@@ -12,7 +12,7 @@ const app = express();
 
 
 mongoose.connect('mongodb://localhost:27017/blog_ninja', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => app.listen(port))
+  .then(console.log('database connection successful'))
   .catch(err => console.log(err));
 
 // register view engine
@@ -79,3 +79,7 @@ app.get('/blogs/:id', (req, res) => {
 app.use((req, res) => {
   res.status(404).render('404', { title: '404' });
 });
+
+app.listen(port,()=>{
+  console.log(`server running on ${port}`)
+})
