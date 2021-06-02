@@ -157,4 +157,12 @@ textarea{
     background-repeat: no-repeat;
     background-position: center center;
   }
+  body{
+    padding: 0 5px;
+  }
+  .details p{
+    padding-left: 0px;
+    padding-right: 0px;
+    font-weight: 400;
+  }
 }
